@@ -1,15 +1,40 @@
 package bean;
 
-public class UserBean {
-/*
-    TODO: For Shahnoza
-      TODO: Make this class inheritor of BaseBean class.
-       Create variables: String username, String password, Integer balance
-       Create getter and setters
-       Create 2 constructors:
-            1 - no arguments constructor.
-            2 - constructor with 2 arguments (username, password)
-                In 2-constructor balance have to be equal to 1000
+public class UserBean extends BaseBean{
+    protected String username;
+    protected String password;
+    protected Integer balance;
 
-*/
+    public UserBean() {
+    }
+
+    public UserBean(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.balance = 1000;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Integer balance) {
+        this.balance = balance;
+    }
 }

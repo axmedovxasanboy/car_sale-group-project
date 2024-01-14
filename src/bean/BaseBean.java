@@ -3,6 +3,11 @@ package bean;
 public class BaseBean {
     protected Integer id;
 
-//    TODO: For Shahnoza
-//    TODO: Generate getter and setter
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
