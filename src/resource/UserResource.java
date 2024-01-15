@@ -24,6 +24,9 @@ public class UserResource implements BaseCRUDResource<UserBean> {
         return null;
     }
 
+
+
+
     @Override
     public String toString() {
         return super.toString();
