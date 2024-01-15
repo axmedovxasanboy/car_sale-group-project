@@ -1,11 +1,27 @@
 package resource;
 
-public class UserResource {
-    /*
-    TODO for Azizbek Qudratov
-    TODO: Make this class implementation of BaseCRUDResource class using Generics
-     Generate all methods from BASECRUDResource using suitable types
-     For example: Add method should take 1 argument which is in UserBean type
-     All methods should return "null" for now.
-    */
+import bean.ApiResponse;
+import bean.UserBean;
+
+public class UserResource implements BaseCRUDResource<UserBean> {
+    @Override
+    public ApiResponse add(UserBean bean) {
+        return null;
+    }
+
+    @Override
+    public ApiResponse get(Integer id) {
+        return null;
+    }
+
+    @Override
+    public ApiResponse edit(UserBean bean) {
+        return null;
+    }
+
+    @Override
+    public ApiResponse delete(Integer id) {
+        return null;
+    }
+
 }
