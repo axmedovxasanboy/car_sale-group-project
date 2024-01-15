@@ -23,12 +23,4 @@ public class UserResource implements BaseCRUDResource<UserBean> {
     public ApiResponse delete(Integer id) {
         return null;
     }
-
-
-
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
 }
