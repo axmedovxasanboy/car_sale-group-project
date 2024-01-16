@@ -5,6 +5,11 @@ public class ApiResponse {
     protected String message;
 
     protected Object data;
+/*  Codes
+    400 - Bad request, user error (program cannot process due to the something that perceived to be a client error)
+    200 - OK, Success
+ */
+
 
     public ApiResponse() {
     }
