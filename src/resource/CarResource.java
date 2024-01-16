@@ -2,9 +2,12 @@ package resource;
 
 import bean.CarBean;
 import bean.ApiResponse;
+import bean.UserBean;
+
 public  class CarResource implements BaseCRUDResource<CarBean>{
     @Override
     public ApiResponse add(CarBean bean) {
+
 /*
         TODO: Fayzullo
          Databaseda addCar method ochiladi

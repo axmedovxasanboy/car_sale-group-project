@@ -2,11 +2,14 @@ package resource;
 
 import bean.ApiResponse;
 import bean.UserBean;
+import db.DataBase;
 
 public class UserResource implements BaseCRUDResource<UserBean> {
     @Override
     public ApiResponse add(UserBean bean) {
+
 /*
+
         TODO: Azizbek
          Databaseda addUser method ochiladi
          bean usernamei uniquelikka tekshiring. Keyin users listiga qoshing
@@ -32,12 +35,12 @@ public class UserResource implements BaseCRUDResource<UserBean> {
     }
 
     public ApiResponse login(UserBean user) {
-/*
-        TODO: Azizbek
-         userni Database dan username i va password i orqali qidiring
-         topilsa 200 code i, Successfully logged in yozuvi va UserBean object bilan qaytarilsin
-         topilmasa 400 code i, Error yozuvi va null object bilan qaytarilsin
-*/
-        return null;
+        for (UserBean existingUser : DataBase.) {
+            if (existingUser.getUsername().equals(user.getUsername()) &&
+                    existingUser.getPassword().equals(user.getPassword())) {
+                return new ApiResponse(200, "Successfully logged in", existingUser);
+            }
+        }
+        return new ApiResponse(400, "Error-> Username or password is incorrect", null);
     }
 }

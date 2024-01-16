@@ -11,6 +11,8 @@ public class DataBase {
     protected List<UserBean> users = new ArrayList<UserBean>();
     protected List<CarBean> cars = new ArrayList<CarBean>();
     public static UserBean session = null;
+    public List<UserBean> usb = new ArrayList<>();
+
 
     public List<UserBean> getUsers() {
         return users;
