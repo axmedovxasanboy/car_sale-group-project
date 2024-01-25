@@ -1,6 +1,6 @@
 package bean;
 
-public class CarBean extends BaseBean{
+public class CarBean extends BaseBean {
 
     protected String name;
     protected String color;
@@ -17,6 +17,16 @@ public class CarBean extends BaseBean{
         this.userId = userId;
         this.price = price;
     }
+
+    public CarBean(Integer id, String name, String color, Integer userId, Integer price, boolean isInStore) {
+        super.setId(id);
+        this.name = name;
+        this.color = color;
+        this.userId = userId;
+        this.price = price;
+        this.isInStore = isInStore;
+    }
+
 
     public String getName() {
         return name;
@@ -56,5 +66,20 @@ public class CarBean extends BaseBean{
 
     public void setInStore(Boolean inStore) {
         isInStore = inStore;
+    }
+
+    @Override
+    public String toString() {
+        String store;
+        if (isInStore) store = "In Store";
+        else store = "not In Store";
+        return "Car Info: [" +
+                "id=" + id +
+                ", car-owner-id=" + userId +
+                ", name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                " || " + store +
+                ']';
     }
 }

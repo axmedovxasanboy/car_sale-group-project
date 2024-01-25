@@ -37,4 +37,14 @@ public class UserBean extends BaseBean{
     public void setBalance(Integer balance) {
         this.balance = balance;
     }
+
+    @Override
+    public String toString() {
+        return "User Info: [" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", balance=" + balance +
+                ']';
+    }
 }
