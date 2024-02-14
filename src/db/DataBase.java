@@ -101,15 +101,16 @@ public class DataBase {
     }
 
     public static boolean marketCars(Integer userId) {
-        /*
-         * TODO Fayzullo
-         *  CarBean listi yaratiladi
-         *  cars ni for bilan aylanib list ga InStore bolgan va
-         *  kirib kelgan userId mashinaning userId si bilen teng bolmagan mashina qoshilsin
-         *  yaratilgan list ekranga chiqarilsin
-         *  agar list bosh bolsa false aks holda true qaytarilsin
-         * */
-        return false;
+
+        List<CarBean> list = new ArrayList<>();
+        for (CarBean car : cars) {
+            if (car.getInStore() && !userId.equals(car.getUserId())) {
+                list.add(car);
+            }
+        }
+
+
+        return list.isEmpty();
     }
 
     public static List<CarBean> carsNotInStore(Integer userId) {
@@ -173,10 +174,9 @@ public class DataBase {
     }
 
     public static CarBean getChosenCar(int carId) {
-        /*
-        * TODO Fayzullo
-        *  cars listini for bilan aylanib carId si kirib kelgan carId bilan teng bolsa shu car qaytarilsin
-        * */
+        for (CarBean car : cars) {
+            if (carId == car.getId()) return car;
+        }
         return null;
     }
 
