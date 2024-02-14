@@ -3,6 +3,7 @@ package db;
 import bean.CarBean;
 import bean.UserBean;
 
+import java.io.Flushable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,12 +42,13 @@ public class DataBase {
     }
 
     public static List<CarBean> getUserCars(Integer id) {
-        /* TODO Azizbek
-        *   for bilan cars list ini aylanib chiqiladi
-        *   car ning userId si kirib kelgan id bilan teng bolsa car listga qoshiladi
-        *   va shu list qaytariladi
-        * */
-        return null;
+        List<CarBean> userCars =new ArrayList<>();
+        for (CarBean car : cars){
+            if (car.getUserId().equals(id)){
+                userCars.add(car);
+            }
+        }
+        return userCars;
     }
 
     public static Boolean deleteCar(Integer carId, Integer userId) {
@@ -114,20 +116,24 @@ public class DataBase {
     }
 
     public static List<CarBean> carsNotInStore(Integer userId) {
-        /*
-        * TODO Azizbek
-        *  CarBean list i yaratiladi va cars listini for bilan aylanib
-        *  userId bilan kirib kelgan userId teng bolsa
-        *  va isInStore false bolsa shu carni listga qoshib qoyiladi
-        *  va oxirida list return qilinadi
-        * */
-        return null;
+        List<CarBean> isInStore = new ArrayList<>();
+         for(CarBean car : cars){
+             if (car.getUserId().equals(userId) && !car.getInStore()){
+                 isInStore.add(car);
+             }
+         }
+         return isInStore;
     }
 
     public static List<CarBean> carsInStore(Integer userId) {
-//        TODO Azizbek
-//        TODO carsNotInStore metodi bilan bir xil faqat isInStore true bolishi kerak
-        return null;
+        List<CarBean> isInStore  = new ArrayList<>();
+        for(CarBean car : cars){
+            if (car.getUserId().equals(userId) && car.getInStore()){
+                isInStore.add(car);
+            }
+        }
+
+        return isInStore;
     }
 
     public static Boolean edit(UserBean user, String newUsername, String newPassword) {
